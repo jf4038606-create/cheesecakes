@@ -1,0 +1,1099 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Georgia", serif;
+    background-color: #fffaf7;
+    color: #69404d;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/*
+   2. ENCABEZADO Y NAVEGACION
+*/
+
+header {
+    width: 100%;
+    min-height: 105px;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background-color: #fffaf8;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+header .titulo {
+    margin-right: auto;
+}
+
+.nombre-empresa {
+    font-size: 34px;
+    font-style: italic;
+    font-weight: bold;
+    color: #b96f80;
+    line-height: 1.2;
+}
+
+.subtitulo-empresa {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #80505d;
+    text-align: center;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+
+.menu-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.menu-navegacion ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-navegacion li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-navegacion a {
+    display: block;
+    padding: 10px 17px;
+    border-radius: 30px;
+
+    color: #795d5d;
+    background-color: transparent;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* PÁGINA ACTUAL: SIEMPRE RESALTADA */
+
+.menu-navegacion a.activo,
+.menu-navegacion a.activo:link,
+.menu-navegacion a.activo:visited {
+    color: #ce666f;
+    background-color: #f8e3e2;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.menu-navegacion a:hover {
+    color: #ce666f;
+    background-color: #f8e3e2;
+    transform: translateY(-2px);
+}
+
+
+
+/*
+   3. PORTADA DE CONTACTENOS
+*/
+
+.inicio-contactenos {
+    min-height: 350px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: linear-gradient(
+        115deg,
+        #f8e4e3,
+        #f5dedd 55%,
+        #f0d0d0
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.tema-inicio {
+    padding: 55px 7% 55px 12%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.icono-hojas {
+    display: block;
+    width: 55px;
+    height: 35px;
+    margin: 0 auto 10px;
+    position: relative;
+}
+
+.icono-hojas::before {
+    content: "❧";
+    font-size: 43px;
+    line-height: 1;
+    color: #b46d7c;
+}
+
+.tema-inicio .titulo {
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.2;
+    font-weight: normal;
+    color: #704553;
+    margin-bottom: 12px;
+}
+
+.parrafo-inicio {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #704553;
+}
+
+.linea {
+    display: inline-block;
+    width: 55px;
+    height: 1px;
+    background-color: #bd7c89;
+    vertical-align: middle;
+    margin: 0 12px;
+}
+
+.corazon {
+    color: #b36a7c;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.parrafo-inicio .linea,
+.parrafo-inicio .corazon {
+    margin-top: 15px;
+}
+
+.imagen-inicio {
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.imagen-inicio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/*
+   4. DATOS Y FORMULARIO DE CONTACTO
+ */
+
+.datos-mensaje {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 65px;
+    align-items: center;
+    padding: 60px 7%;
+    background-color: #fffaf7;
+}
+
+.tema-datos,
+.formulario-contacto h2 {
+    font-size: 32px;
+    line-height: 1.3;
+    font-weight: bold;
+    color: #754654;
+    margin-bottom: 15px;
+}
+
+
+/* DATOS DE CONTACTO */
+
+.datos-contactenos {
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
+    column-gap: 15px;
+    align-items: center;
+}
+
+.datos-contactenos .tema-datos {
+    grid-column: 1 / -1;
+    margin-bottom: 22px;
+}
+
+.icono-datos {
+    grid-column: 1;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background-color: #f5dadd;
+    color: #a35f71;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+.consulta {
+    grid-column: 2;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #704553;
+    margin: 0;
+    align-self: end;
+}
+
+.datos-concepto {
+    grid-column: 2;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #795460;
+    white-space: pre-line;
+    margin: 0 0 20px;
+    align-self: start;
+}
+
+/* Posicionamiento de los iconos */
+
+.datos-contactenos .icono-datos:nth-of-type(1) {
+    grid-row: 2 / span 2;
+}
+
+.datos-contactenos .icono-datos:nth-of-type(2) {
+    grid-row: 4 / span 2;
+}
+
+.datos-contactenos .icono-datos:nth-of-type(3) {
+    grid-row: 6 / span 2;
+}
+
+.datos-contactenos .icono-datos:nth-of-type(4) {
+    grid-row: 8 / span 2;
+}
+
+.datos-contactenos > .linea {
+    grid-row: 10;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 20px;
+}
+
+.datos-contactenos > .corazon {
+    grid-row: 10;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 20px;
+    background-color: #fffaf7;
+    padding: 0 8px;
+    z-index: 1;
+}
+
+/* FORMULARIO */
+
+.formulario-contacto {
+    background: linear-gradient(
+        145deg,
+        #f8e8e8,
+        #f7e1e2
+    );
+    padding: 30px 32px;
+    border-radius: 18px;
+    width: 100%;
+}
+
+.formulario-contacto h2 {
+    margin-bottom: 8px;
+}
+
+.texto-formulario {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #795460;
+    margin-bottom: 20px;
+}
+
+#formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campos-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+#formulario-contacto input,
+#formulario-contacto select,
+#formulario-contacto textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #e6d4d4;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #69404d;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+#formulario-contacto input::placeholder,
+#formulario-contacto textarea::placeholder {
+    color: #88777c;
+}
+
+#formulario-contacto input:focus,
+#formulario-contacto select:focus,
+#formulario-contacto textarea:focus {
+    border-color: #c47c8c;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(196, 124, 140, 0.12);
+}
+
+#formulario-contacto select {
+    cursor: pointer;
+}
+
+#formulario-contacto textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.boton-enviar {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(
+        100deg,
+        #d997a2,
+        #c77c8b
+    );
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.boton-enviar span {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.boton-enviar:hover {
+    background: linear-gradient(
+        100deg,
+        #c77c8b,
+        #b5687a
+    );
+    box-shadow: 0 6px 16px rgba(153, 87, 105, 0.2);
+    transform: translateY(-2px);
+}
+
+.boton-enviar:active {
+    transform: translateY(0);
+}
+
+
+/*
+   5. MAPA Y MENSAJE DECORATIVO
+*/
+
+.donde-encontrarnos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+    padding: 0 7% 70px;
+    background-color: #fffaf7;
+}
+
+.mapa {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #f3e6e3;
+    box-shadow: 0 4px 16px rgba(112, 69, 83, 0.06);
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+
+.verte {
+    text-align: center;
+    padding: 20px;
+}
+
+.pronto {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #80505e;
+    margin-bottom: 15px;
+}
+
+.verte .corazon {
+    font-size: 17px;
+}
+
+.encantaria {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #795460;
+    text-align: left;
+    margin-top: 25px;
+}
+
+
+/*
+   6. PIE DE PAGINA
+*/
+
+footer {
+    min-height: 170px;
+    padding: 30px 7%;
+    background: linear-gradient(
+        120deg,
+        #f8e1e2,
+        #f5d8dc,
+        #f9e7e5
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    position: relative;
+    text-align: center;
+}
+
+/* Curva decorativa superior */
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -22px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: #f8e1e2;
+    border-radius: 50% 50% 0 0 / 65% 65% 0 0;
+}
+
+footer > div {
+    position: relative;
+    z-index: 1;
+}
+
+.icono-ultimo {
+    display: block;
+    font-size: 32px;
+    color: #b96f80;
+}
+
+footer > div:first-child p {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bold;
+    color: #b96f80;
+    line-height: 1.3;
+}
+
+.final {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #80505d;
+}
+
+.frase-ultima {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.hojas-2 {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.frase-final-footer {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #b56c7c;
+}
+
+.punto {
+    color: #b56c7c;
+}
+
+.redes-sociales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.redes-sociales a {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background-color: #b56c7c;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    background-color: #8f4d60;
+    transform: translateY(-4px);
+}
+
+.redes-sociales {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.redes-sociales a {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #b56c7c;
+    color: #ffffff;
+
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    background-color: #8f4d60;
+    transform: translateY(-4px);
+}
+
+.redes-sociales i {
+    line-height: 1;
+}
+
+/* 
+   7. ANIMACIONES SUAVES
+ */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tema-inicio,
+.imagen-inicio,
+.datos-contactenos,
+.formulario-contacto,
+.mapa,
+.verte {
+    animation: aparecer 0.8s ease both;
+}
+
+.imagen-inicio {
+    animation-delay: 0.15s;
+}
+
+.formulario-contacto {
+    animation-delay: 0.15s;
+}
+
+
+
+/* ========================================
+   8. ADAPTACIÓN PARA LAPTOPS PEQUEÑAS
+======================================== */
+
+@media (max-width: 1200px) {
+
+    header {
+        padding: 15px 3%;
+        gap: 15px;
+    }
+
+    .menu-navegacion ul {
+        gap: 3px;
+    }
+
+    .menu-navegacion a {
+        padding: 9px 11px;
+        font-size: 13px;
+    }
+
+    .datos-mensaje,
+    .donde-encontrarnos {
+        gap: 35px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .tema-inicio {
+        padding: 45px 6%;
+    }
+
+    .formulario-contacto {
+        padding: 28px 24px;
+    }
+}
+
+
+/* ========================================
+   9. TABLETS Y PANTALLAS MEDIANAS
+======================================== */
+
+@media (max-width: 992px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+        padding: 18px 4%;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    header .titulo {
+        margin-right: 0;
+    }
+
+    .nombre-empresa {
+        font-size: 30px;
+    }
+
+    .menu-navegacion {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .menu-navegacion ul {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .menu-navegacion a {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+
+    .inicio-contactenos {
+        grid-template-columns: 1fr 1fr;
+        min-height: 320px;
+    }
+
+    .tema-inicio {
+        padding: 35px 6%;
+    }
+
+    .tema-inicio .titulo {
+        font-size: clamp(36px, 5vw, 48px);
+    }
+
+    .parrafo-inicio {
+        font-size: 17px;
+    }
+
+    .imagen-inicio {
+        height: 320px;
+    }
+
+    .datos-mensaje {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 45px 7%;
+    }
+
+    .datos-contactenos {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .formulario-contacto {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .donde-encontrarnos {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 7% 55px;
+    }
+
+    .mapa {
+        height: 320px;
+    }
+
+    .verte {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px 35px;
+        padding: 35px 5%;
+    }
+
+    footer > div {
+        flex: 1 1 200px;
+    }
+}
+
+
+/* ========================================
+   10. CELULARES GRANDES
+======================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 16px 4%;
+    }
+
+    .logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .nombre-empresa {
+        font-size: 27px;
+    }
+
+    .subtitulo-empresa {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+    }
+
+    .menu-navegacion ul {
+        width: 100%;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .inicio-contactenos {
+        grid-template-columns: 1fr;
+    }
+
+    .tema-inicio {
+        padding: 45px 7% 35px;
+    }
+
+    .tema-inicio .titulo {
+        font-size: 43px;
+    }
+
+    .parrafo-inicio {
+        font-size: 17px;
+    }
+
+    .imagen-inicio {
+        height: 280px;
+    }
+
+    .datos-mensaje {
+        padding: 40px 6%;
+        gap: 35px;
+    }
+
+    .tema-datos,
+    .formulario-contacto h2 {
+        font-size: 27px;
+    }
+
+    .formulario-contacto {
+        padding: 25px 22px;
+    }
+
+    .texto-formulario {
+        font-size: 15px;
+    }
+
+    .campos-formulario {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .donde-encontrarnos {
+        padding: 0 6% 45px;
+    }
+
+    .mapa {
+        height: 270px;
+    }
+
+    .pronto {
+        font-size: 26px;
+    }
+
+    .encantaria {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 25px;
+        padding: 35px 6%;
+    }
+
+    footer > div {
+        flex: initial;
+        width: 100%;
+    }
+
+    .frase-final-footer {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+}
+
+
+/* ========================================
+   11. CELULARES PEQUEÑOS
+======================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        gap: 10px;
+        padding: 14px 3%;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .nombre-empresa {
+        font-size: 24px;
+    }
+
+    .subtitulo-empresa {
+        font-size: 10px;
+    }
+
+    .menu-navegacion ul {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    .tema-inicio {
+        padding: 35px 6% 30px;
+    }
+
+    .tema-inicio .titulo {
+        font-size: 36px;
+    }
+
+    .parrafo-inicio {
+        font-size: 15px;
+    }
+
+    .linea {
+        width: 32px;
+        margin: 0 5px;
+    }
+
+    .imagen-inicio {
+        height: 230px;
+    }
+
+    .datos-mensaje {
+        padding: 35px 5%;
+    }
+
+    .tema-datos,
+    .formulario-contacto h2 {
+        font-size: 24px;
+    }
+
+    .datos-contactenos {
+        grid-template-columns: 48px minmax(0, 1fr);
+        column-gap: 12px;
+    }
+
+    .icono-datos {
+        width: 43px;
+        height: 43px;
+        font-size: 23px;
+    }
+
+    .consulta {
+        font-size: 16px;
+    }
+
+    .datos-concepto {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .formulario-contacto {
+        padding: 22px 16px;
+        border-radius: 14px;
+    }
+
+    #formulario-contacto input,
+    #formulario-contacto select,
+    #formulario-contacto textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .boton-enviar {
+        padding: 13px 15px;
+        font-size: 15px;
+    }
+
+    .mapa {
+        height: 220px;
+    }
+
+    .verte {
+        padding: 15px 5px;
+    }
+
+    .pronto {
+        font-size: 23px;
+    }
+
+    .encantaria {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    footer > div:first-child p {
+        font-size: 24px;
+    }
+
+    .redes-sociales {
+        gap: 12px;
+    }
+
+    .redes-sociales a {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+
+/* ========================================
+   12. ACCESIBILIDAD Y MOVIMIENTO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .tema-inicio,
+    .imagen-inicio,
+    .datos-contactenos,
+    .formulario-contacto,
+    .mapa,
+    .verte {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

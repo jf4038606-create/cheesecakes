@@ -1,0 +1,1309 @@
+
+/*variables para la pagina */
+
+:root {
+    --fondo: #fff8f6;
+    --rosa-claro: #f9e8e7;
+    --rosa-medio: #edcccc;
+    --rosa: #d99da2;
+    --rosa-oscuro: #bd7b83;
+    --vino: #98656a;
+    --texto: #805e60;
+    --blanco: #fffdfb;
+    --borde: #efd2d0;
+    --sombra: 0 8px 25px rgba(151, 94, 99, 0.09);
+}
+
+/* REINICIO GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+/*
+   ENCABEZADO
+*/
+
+header {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    min-height: 92px;
+    padding: 12px 6%;
+
+    background: rgba(255, 250, 248, 0.97);
+    border-bottom: 1px solid rgba(225, 180, 180, 0.35);
+
+    animation: aparecerArriba 0.8s ease both;
+}
+
+/* LOGO */
+
+.logo {
+    display: block;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* NOMBRE DE LA EMPRESA */
+
+header .titulo {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.nombre-empresa {
+    margin: 0;
+    color: var(--rosa-oscuro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.subtitulo-empresa {
+    margin: 3px 0 0;
+    color: var(--vino);
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+}
+
+/* NAVEGACIÓN */
+
+.menu-navegacion {
+    margin-left: auto;
+}
+
+.menu-navegacion ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-navegacion a {
+    display: inline-block;
+    padding: 9px 17px;
+    border-radius: 30px;
+
+    color: #79595a;
+    font-size: 0.94rem;
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.menu-navegacion a:hover,
+.menu-navegacion a:focus-visible {
+    color: #bd686f;
+    background: #f9e3e2;
+    transform: translateY(-2px);
+}
+
+/* Página actual: Galería */
+
+.menu-navegacion a[href="galeria.html"] {
+    color: #bd686f;
+    background: #f8e2e1;
+}
+
+/*
+   PORTADA DE LA GALERÍA
+*/
+
+.galeria-inicio {
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    grid-template-columns: 52% 48%;
+    align-items: stretch;
+
+    min-height: 330px;
+    padding: 0;
+    gap: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 12% 15%,
+            #fffaf8 0%,
+            transparent 45%
+        ),
+        linear-gradient(
+            120deg,
+            #f8e5e3 0%,
+            #fff6f4 54%,
+            #efcecc 100%
+        );
+}
+
+/* Curva decorativa detrás de la portada */
+
+.galeria-inicio::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    left: -10%;
+    bottom: -45%;
+    width: 75%;
+    height: 75%;
+
+    background: rgba(240, 205, 204, 0.42);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* CONTENIDO DE LA PORTADA */
+
+.contenido-inicio {
+    position: relative;
+    z-index: 1;
+
+    align-self: center;
+    padding: 40px 5% 42px 12%;
+
+    text-align: center;
+
+    animation: aparecerIzquierda 0.9s ease 0.1s both;
+}
+
+/* ADORNO DE HOJAS SOBRE EL TÍTULO */
+
+.hojas {
+    position: relative;
+    display: block;
+
+    width: 58px;
+    height: 43px;
+
+    margin: 0 auto 5px;
+}
+
+.hojas::before {
+    content: "❧";
+    position: absolute;
+    inset: -13px 0 0;
+
+    color: var(--rosa);
+    font-size: 2.5rem;
+    transform: rotate(90deg);
+}
+
+/* TÍTULO PRINCIPAL */
+
+.contenido-inicio h1.titulo {
+    margin: 0 0 14px;
+
+    color: #bd7b83;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.2rem, 6.1vw, 5.2rem);
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.12;
+}
+
+/* LÍNEAS Y CORAZÓN */
+
+.contenido-inicio > .linea {
+    display: inline-block;
+    width: 55px;
+    height: 1px;
+
+    margin: 0 8px 6px;
+    background: #e3a9ad;
+}
+
+.contenido-inicio > .corazon {
+    color: #d78e96;
+    font-size: 1.15rem;
+}
+
+/* TEXTO DE LA PORTADA */
+
+.parrafo-inicio {
+    max-width: 440px;
+    margin: 19px auto 0;
+
+    color: #805d5e;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* IMAGEN DE LA PORTADA */
+
+.imagen-inicio {
+    position: relative;
+    min-width: 0;
+    min-height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 39% 0 0 39% / 100% 0 0 100%;
+
+    animation: aparecerDerecha 1s ease 0.15s both;
+}
+
+.imagen-inicio img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    min-height: 330px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    transition: transform 0.8s ease;
+}
+
+.imagen-inicio:hover img {
+    transform: scale(1.035);
+}
+
+/*
+   GALERÍA DE VIDEOS
+*/
+
+.videos-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 16px 24px;
+
+    width: min(1120px, 88%);
+    margin: 0 auto;
+
+    padding: 38px 0 24px;
+}
+
+/* TARJETAS */
+
+.video-card {
+    position: relative;
+    min-width: 0;
+    padding: 9px 11px 18px;
+
+    overflow: hidden;
+
+    background: rgba(255, 253, 251, 0.72);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 12px rgba(151, 94, 99, 0.025);
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Clase agregada mediante JavaScript */
+
+.video-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto al pasar el cursor */
+
+.video-card.visible:hover {
+    border-color: #e4b8b8;
+    box-shadow: 0 10px 24px rgba(151, 94, 99, 0.12);
+    transform: translateY(-4px);
+}
+
+/*
+   IMÁGENES Y BOTÓN PLAY
+*/
+
+.video-trigger {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #f1dedd;
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+.video-trigger img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.55s ease,
+        filter 0.35s ease;
+}
+
+.video-trigger:hover img,
+.video-trigger:focus-visible img {
+    transform: scale(1.045);
+    filter: brightness(0.86);
+}
+
+/* CÍRCULO DE REPRODUCCIÓN */
+
+.boton-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+    padding-left: 4px;
+
+    color: white;
+    background: rgba(190, 119, 128, 0.88);
+    border: 2px solid white;
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.4rem;
+
+    transform: translate(-50%, -50%);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.video-trigger:hover .boton-play,
+.video-trigger:focus-visible .boton-play {
+    background: #a96b73;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* INDICADOR DE FOCO */
+
+.video-trigger:focus-visible,
+.cerrar-modal:focus-visible {
+    outline: 3px solid #b77b84;
+    outline-offset: 3px;
+}
+
+/*
+   ADORNOS DE LAS TARJETAS
+*/
+
+.hoja-izquierda,
+.hoja-derecha {
+    position: absolute;
+    top: 62%;
+
+    color: #e4b1b3;
+    font-size: 1.2rem;
+    line-height: 1;
+
+    pointer-events: none;
+
+    animation: balanceoHojas 4s ease-in-out infinite;
+}
+
+.hoja-izquierda {
+    left: 15px;
+    transform-origin: center;
+}
+
+.hoja-derecha {
+    right: 15px;
+    animation-delay: 0.5s;
+}
+
+.icono-galeria {
+    display: block;
+
+    margin: 12px 0 1px;
+
+    color: #a97176;
+    font-size: 1.65rem;
+    line-height: 1.2;
+}
+
+.video-card h3 {
+    margin: 4px 0 9px;
+
+    color: #966368;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.45;
+}
+
+.video-card p {
+    max-width: 390px;
+    margin: 0 auto;
+
+    color: #89676a;
+    font-size: 0.88rem;
+    line-height: 1.75;
+}
+
+/*
+   VENTANA EMERGENTE DE LOS VIDEOS
+*/
+
+.modal-video {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(47, 30, 34, 0.78);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.modal-video.activo {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* CONTENEDOR DEL REPRODUCTOR */
+
+.contenido-modal {
+    position: relative;
+
+    width: min(900px, 100%);
+    padding: 15px;
+
+    background: #fff9f7;
+    border: 1px solid #efd2d0;
+    border-radius: 15px;
+
+    box-shadow: 0 20px 65px rgba(0, 0, 0, 0.3);
+
+    transform: translateY(15px) scale(0.97);
+
+    transition: transform 0.3s ease;
+}
+
+.modal-video.activo .contenido-modal {
+    transform: translateY(0) scale(1);
+}
+
+.contenido-modal video {
+    display: block;
+
+    width: 100%;
+    max-height: 76vh;
+
+    background: #211a1b;
+    border-radius: 8px;
+}
+
+/* BOTÓN CERRAR */
+
+.cerrar-modal {
+    position: absolute;
+    top: -16px;
+    right: -14px;
+    z-index: 2;
+
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    color: white;
+    background: #a96b73;
+    border: 2px solid #fff9f7;
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.8rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.cerrar-modal:hover {
+    background: #89555e;
+    transform: rotate(90deg);
+}
+
+/* Evitar desplazamiento de la página al abrir un video */
+
+body.modal-abierto {
+    overflow: hidden;
+}
+
+/*
+   FOOTER DECORATIVO
+*/
+
+footer {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    min-height: 150px;
+    margin-top: 0;
+    padding: 45px 8% 31px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        180deg,
+        #f9e6e5 0%,
+        #f8e5e5 100%
+    );
+
+    color: #ae747c;
+    text-align: center;
+}
+
+/* CURVA SUPERIOR */
+
+footer::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    top: -44px;
+    left: -10%;
+
+    width: 120%;
+    height: 80px;
+
+    background: var(--fondo);
+    border-radius: 0 0 50% 50% / 0 0 75% 75%;
+
+    pointer-events: none;
+}
+
+/* ADORNOS LATERALES */
+
+.final-izquierda,
+.final-derecha {
+    position: absolute;
+    bottom: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-izquierda {
+    left: 6%;
+}
+
+.final-derecha {
+    right: 6%;
+}
+
+.icono-izquierda,
+.icono-derecha {
+    display: inline-block;
+
+    color: #e3b0b2;
+    font-size: 2.5rem;
+    line-height: 1;
+
+    opacity: 0.95;
+
+    animation: balanceoHojas 4s ease-in-out infinite;
+}
+
+.icono-derecha {
+    animation-delay: 0.5s;
+}
+
+/* DIVISOR DEL FOOTER */
+
+footer > .linea {
+    display: inline-block;
+
+    width: 45px;
+    height: 1px;
+    margin: 0;
+
+    background: #dca4a8;
+}
+
+footer > .corazon {
+    color: #d38c95;
+    font-size: 1.15rem;
+}
+
+/* FRASE CENTRAL */
+
+.frase-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    margin-top: 2px;
+}
+
+.frase-footer {
+    margin: 0;
+
+    color: #b77b83;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.corazon-final {
+    color: #c9808a;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/*
+   ANIMACIONES
+*/
+
+@keyframes aparecerArriba {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecerIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aparecerDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes balanceoHojas {
+    0%, 100% {
+        rotate: -4deg;
+    }
+
+    50% {
+        rotate: 4deg;
+    }
+}
+
+
+
+/* =========================================
+   DISEÑO RESPONSIVO PARA OTROS DISPOSITIVOS
+   ========================================= */
+
+
+/* =========================================
+   1. COMPUTADORAS PORTÁTILES
+   Hasta 1200px
+   ========================================= */
+
+@media (max-width: 1200px) {
+
+    header {
+        gap: 15px;
+        padding: 12px 3%;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 11px;
+        font-size: 0.9rem;
+    }
+
+    .contenido-inicio {
+        padding: 35px 5% 35px 8%;
+    }
+
+    .contenido-inicio h1.titulo {
+        font-size: clamp(3rem, 5.5vw, 4.5rem);
+    }
+
+    .videos-galeria {
+        width: 90%;
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================
+   2. TABLETS
+   Hasta 992px
+   ========================================= */
+
+@media (max-width: 992px) {
+
+    /* Encabezado */
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
+        padding: 15px 4%;
+    }
+
+    header .titulo {
+        margin-right: auto;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .menu-navegacion {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .menu-navegacion ul {
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+
+    /* Portada de la galería */
+
+    .galeria-inicio {
+        grid-template-columns: 1fr 1fr;
+        min-height: 290px;
+    }
+
+    .contenido-inicio {
+        padding: 30px 6%;
+    }
+
+    .contenido-inicio h1.titulo {
+        font-size: clamp(2.7rem, 5vw, 4rem);
+    }
+
+    .parrafo-inicio {
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+
+    .imagen-inicio {
+        min-height: 290px;
+        border-radius: 30% 0 0 30% / 100% 0 0 100%;
+    }
+
+    .imagen-inicio img {
+        min-height: 290px;
+    }
+
+
+    /* Tarjetas de videos */
+
+    .videos-galeria {
+        width: 92%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        padding-top: 30px;
+    }
+
+    .video-card {
+        padding: 8px 9px 15px;
+    }
+
+    .boton-play {
+        width: 52px;
+        height: 52px;
+        font-size: 1.25rem;
+    }
+
+    .video-card p {
+        font-size: 0.86rem;
+    }
+
+
+    /* Ventana del video */
+
+    .contenido-modal {
+        width: min(800px, 100%);
+    }
+
+    .contenido-modal video {
+        max-height: 70vh;
+    }
+
+
+    /* Pie de página */
+
+    footer {
+        padding: 40px 10% 35px;
+    }
+
+}
+
+
+/* =========================================
+   3. CELULARES Y TABLETS PEQUEÑAS
+   Hasta 768px
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Encabezado */
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    header .titulo {
+        margin-right: 0;
+    }
+
+    .nombre-empresa {
+        font-size: 1.7rem;
+    }
+
+    .subtitulo-empresa {
+        font-size: 0.85rem;
+    }
+
+    .menu-navegacion ul {
+        gap: 5px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+
+    /* Portada: texto arriba e imagen abajo */
+
+    .galeria-inicio {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .contenido-inicio {
+        padding: 35px 7% 30px;
+    }
+
+    .contenido-inicio h1.titulo {
+        font-size: clamp(2.8rem, 9vw, 4rem);
+    }
+
+    .parrafo-inicio {
+        max-width: 500px;
+        margin-top: 14px;
+        font-size: 1rem;
+    }
+
+    .hojas {
+        margin-bottom: 0;
+    }
+
+    .imagen-inicio {
+        width: 100%;
+        height: 300px;
+        min-height: 0;
+        border-radius: 0;
+    }
+
+    .imagen-inicio img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: cover;
+        object-position: center;
+    }
+
+
+    /* Galería: una tarjeta debajo de otra */
+
+    .videos-galeria {
+        width: min(520px, 90%);
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 28px 0;
+    }
+
+    .video-card {
+        padding: 10px 11px 18px;
+    }
+
+    .video-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .video-card p {
+        max-width: 420px;
+        font-size: 0.92rem;
+    }
+
+    .boton-play {
+        width: 58px;
+        height: 58px;
+        font-size: 1.35rem;
+    }
+
+
+    /* Ventana emergente */
+
+    .modal-video {
+        padding: 18px;
+    }
+
+    .contenido-modal {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .contenido-modal video {
+        max-height: 65vh;
+    }
+
+    .cerrar-modal {
+        top: -12px;
+        right: -9px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.6rem;
+    }
+
+
+    /* Pie de página */
+
+    footer {
+        min-height: 140px;
+        padding: 40px 12% 35px;
+        gap: 8px;
+    }
+
+    .frase-footer {
+        font-size: 1rem;
+    }
+
+    .final-izquierda {
+        left: 3%;
+    }
+
+    .final-derecha {
+        right: 3%;
+    }
+
+    .icono-izquierda,
+    .icono-derecha {
+        font-size: 1.8rem;
+    }
+
+}
+
+
+/* =========================================
+   4. CELULARES PEQUEÑOS
+   Hasta 480px
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    /* Encabezado */
+
+    header {
+        padding: 12px 4%;
+        gap: 8px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nombre-empresa {
+        font-size: 1.45rem;
+    }
+
+    .subtitulo-empresa {
+        font-size: 0.78rem;
+    }
+
+    .menu-navegacion ul {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .menu-navegacion li {
+        min-width: 0;
+        text-align: center;
+    }
+
+    .menu-navegacion a {
+        display: block;
+        padding: 8px 3px;
+        font-size: 0.78rem;
+        border-radius: 20px;
+    }
+
+
+    /* Portada */
+
+    .contenido-inicio {
+        padding: 28px 6% 25px;
+    }
+
+    .contenido-inicio h1.titulo {
+        font-size: 2.8rem;
+    }
+
+    .hojas {
+        transform: scale(0.9);
+    }
+
+    .parrafo-inicio {
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+
+    .contenido-inicio > .linea {
+        width: 38px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .imagen-inicio {
+        height: 230px;
+    }
+
+
+    /* Tarjetas */
+
+    .videos-galeria {
+        width: 92%;
+        gap: 16px;
+        padding: 22px 0;
+    }
+
+    .video-card {
+        padding: 8px 8px 15px;
+        border-radius: 10px;
+    }
+
+    .video-trigger {
+        border-radius: 6px;
+    }
+
+    .boton-play {
+        width: 48px;
+        height: 48px;
+        font-size: 1.15rem;
+    }
+
+    .icono-galeria {
+        margin-top: 10px;
+        font-size: 1.45rem;
+    }
+
+    .video-card h3 {
+        margin: 5px 0 8px;
+        font-size: 1.08rem;
+    }
+
+    .video-card p {
+        font-size: 0.85rem;
+        line-height: 1.65;
+    }
+
+    .hoja-izquierda {
+        left: 8px;
+    }
+
+    .hoja-derecha {
+        right: 8px;
+    }
+
+
+    /* Ventana de video */
+
+    .modal-video {
+        padding: 12px;
+    }
+
+    .contenido-modal {
+        padding: 7px;
+    }
+
+    .contenido-modal video {
+        max-height: 58vh;
+    }
+
+    .cerrar-modal {
+        top: -10px;
+        right: -7px;
+        width: 32px;
+        height: 32px;
+        font-size: 1.4rem;
+    }
+
+
+    /* Pie de página */
+
+    footer {
+        min-height: 125px;
+        padding: 35px 10% 30px;
+    }
+
+    footer > .linea {
+        width: 30px;
+    }
+
+    .frase-final {
+        gap: 3px;
+    }
+
+    .frase-footer {
+        font-size: 0.88rem;
+    }
+
+    .corazon-final {
+        font-size: 1.15rem;
+    }
+
+    .icono-izquierda,
+    .icono-derecha {
+        font-size: 1.4rem;
+    }
+
+}
+
+
+/* =========================================
+   5. ACCESIBILIDAD
+   Reducir animaciones si el usuario lo prefiere
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

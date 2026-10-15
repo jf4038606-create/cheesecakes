@@ -1,0 +1,1521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variables que voy a ocupar*/
+
+:root {
+    --crema: #fbf7f3;
+    --rosa-claro: #f5e6e2;
+    --rosa-medio: #e7bcb7;
+    --rosa-fuerte: #ce827d;
+    --rosa-oscuro: #bd7b83;
+    --marron: #65433b;
+    --marron-oscuro: #4d302b;
+    --gris: #8f8582;
+    --blanco: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--crema);
+    color: var(--marron);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* 
+   2. ENCABEZADO Y NAVEGACIÓN
+ */
+
+
+header {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    min-height: 92px;
+    padding: 12px 6%;
+
+    background: rgba(255, 250, 248, 0.97);
+    border-bottom: 1px solid rgba(225, 180, 180, 0.35);
+
+    animation: aparecerArriba 0.8s ease both;
+}
+
+/* LOGO */
+
+.logo {
+    display: block;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* NOMBRE DE LA EMPRESA */
+
+header .titulo {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.nombre-empresa {
+    margin: 0;
+    color: var(--rosa-oscuro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.subtitulo-empresa {
+    margin: 3px 0 0;
+    color: var(--vino);
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+}
+/* MENÚ DE NAVEGACIÓN */
+
+.menu-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.menu-navegacion ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-navegacion li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-navegacion a {
+    display: block;
+    padding: 10px 17px;
+    border-radius: 30px;
+
+    color: #795d5d;
+    background-color: transparent;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* PÁGINA ACTUAL: SIEMPRE RESALTADA */
+
+.menu-navegacion a.activo,
+.menu-navegacion a.activo:link,
+.menu-navegacion a.activo:visited {
+    color: #ce666f;
+    background-color: #f8e3e2;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.menu-navegacion a:hover {
+    color: #ce666f;
+    background-color: #f8e3e2;
+    transform: translateY(-2px);
+}
+
+
+/*
+   3. SECCIÓN PRINCIPAL
+ */
+
+main > section:first-child {
+    min-height: 415px;
+    display: grid;
+    grid-template-columns: 43% 57%;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 0% 10%,
+            #f2dfda 0,
+            #f2dfda 9%,
+            transparent 9.2%
+        ),
+        linear-gradient(105deg, #fbf6f2, #f4e5e1);
+}
+
+main > section:first-child > div:first-child {
+    padding: 45px 35px 45px 18%;
+    position: relative;
+    z-index: 2;
+}
+
+main > section:first-child > div:first-child > p:first-child {
+    color: var(--rosa-fuerte);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+main > section:first-child h1 {
+    max-width: 390px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 4.2vw, 57px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+    color: var(--marron-oscuro);
+    margin-bottom: 20px;
+}
+
+main > section:first-child > div:first-child > p:nth-of-type(2) {
+    max-width: 370px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #78645f;
+    margin-bottom: 28px;
+}
+
+main > section:first-child > div:first-child > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 11px 22px;
+    background-color: var(--rosa-fuerte);
+    color: var(--blanco);
+    border-radius: 30px;
+    font-size: 11px;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+main > section:first-child > div:first-child > a::after {
+    content: "→";
+    font-size: 18px;
+}
+
+main > section:first-child > div:first-child > a:hover {
+    background-color: #b96e69;
+    transform: translateY(-2px);
+}
+
+.imagen-principal {
+    height: 100%;
+    min-height: 415px;
+    overflow: hidden;
+    border-radius: 48% 0 0 0 / 55% 0 0 0;
+}
+
+.imagen-principal img {
+    width: 100%;
+    height: 100%;
+    min-height: 415px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/*
+   4. CARACTERÍSTICAS DEL PRODUCTO
+ */
+
+.caracteristicas-producto {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    padding: 24px 5%;
+    min-height: 145px;
+    background: linear-gradient(
+        100deg,
+        #f3e4e0,
+        #f8efeb,
+        #f3e5e1
+    );
+}
+
+.caracteristicas {
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px;
+    position: relative;
+}
+
+.caracteristicas:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 1px;
+    height: 82px;
+    background-color: #e5c8c2;
+}
+
+.icono {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7px;
+    border-radius: 50%;
+    background-color: #f0dfdb;
+    color: var(--rosa-fuerte);
+    font-size: 25px;
+}
+
+.caracteristicas p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--marron);
+}
+
+.caracteristicas p span {
+    display: block;
+    font-size: 10px;
+    color: var(--gris);
+    margin-top: 3px;
+}
+
+
+/* 
+   5. NUESTRA ESPECIALIDAD
+*/
+
+.nuestra-especialidad {
+    padding: 48px 6.7% 55px;
+    display: grid;
+    grid-template-columns: 34% 66%;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--crema);
+}
+
+.especialidad > p:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--rosa-fuerte);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.especialidad > p:first-child::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background-color: var(--rosa-fuerte);
+}
+
+.especialidad h2 {
+    max-width: 310px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1.05;
+    font-weight: 400;
+    color: var(--marron);
+    margin-bottom: 20px;
+}
+
+.especialidad > p:nth-of-type(2) {
+    max-width: 300px;
+    font-size: 12px;
+    line-height: 1.75;
+    color: #958985;
+    margin-bottom: 25px;
+}
+
+.especialidad > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 9px 21px;
+    border: 1px solid var(--rosa-fuerte);
+    border-radius: 30px;
+    color: var(--marron);
+    font-size: 11px;
+    transition: all 0.3s ease;
+}
+
+.especialidad > a::after {
+    content: "→";
+    font-size: 17px;
+}
+
+.especialidad > a:hover {
+    color: var(--blanco);
+    background-color: var(--rosa-fuerte);
+}
+
+
+/* Tarjetas de los tres cheesecakes */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px;
+}
+
+.imagen-galeria {
+    min-width: 0;
+    text-align: center;
+}
+
+.imagen-galeria img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100px 100px 4px 4px;
+    transition: transform 0.4s ease;
+}
+
+.imagen-galeria img:hover {
+    transform: translateY(-5px);
+}
+
+.imagen-galeria h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--marron);
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+.imagen-galeria p {
+    font-size: 10px;
+    color: #9b918d;
+    line-height: 1.5;
+}
+
+
+/* 
+   6. EXPERIENCIA SOFTY CAKES
+*/
+
+.experiencia {
+    display: grid;
+    grid-template-columns: 30% 39% 31%;
+    align-items: center;
+    gap: 0;
+    min-height: 270px;
+    background: linear-gradient(
+        100deg,
+        #f4e4e0,
+        #fbf4f0,
+        #f1dfdb
+    );
+    overflow: hidden;
+}
+
+.imagen-experiencia {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    border-radius: 0 50% 50% 0 / 0 45% 45% 0;
+}
+
+.imagen-experiencia img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.postre {
+    padding: 30px 28px 30px 35px;
+}
+
+.postre > p:first-child {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--rosa-fuerte);
+    margin-bottom: 8px;
+}
+
+.postre h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 2.8vw, 33px);
+    line-height: 1.08;
+    font-weight: 400;
+    color: var(--marron);
+    margin-bottom: 12px;
+}
+
+.postre > p:nth-of-type(2) {
+    font-size: 11px;
+    line-height: 1.7;
+    color: #948782;
+    margin-bottom: 15px;
+}
+
+.postre > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 7px 17px;
+    border: 1px solid var(--rosa-fuerte);
+    border-radius: 25px;
+    font-size: 10px;
+    color: var(--marron);
+    transition: all 0.3s ease;
+}
+
+.postre > a::after {
+    content: "→";
+    font-size: 15px;
+}
+
+.postre > a:hover {
+    color: var(--blanco);
+    background-color: var(--rosa-fuerte);
+}
+
+
+/* Lista de ventajas */
+
+.opciones {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    column-gap: 12px;
+    align-items: center;
+    padding: 25px 14% 25px 5px;
+}
+
+.icono-opciones {
+    grid-column: 1;
+    grid-row: auto / span 2;
+    width: 49px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #edd7d1;
+    border-radius: 50%;
+    background-color: #f8eae6;
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.opciones h4 {
+    align-self: end;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--marron);
+    margin-bottom: 2px;
+}
+
+.opciones p {
+    align-self: start;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #9b8e89;
+    margin-bottom: 5px;
+}
+
+
+/*
+   7. SECCIÓN DE PEDIDOS
+*/
+
+.pedidos {
+    min-height: 130px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 8%;
+    background:
+        radial-gradient(
+            ellipse at 0% 100%,
+            #f2d7d2 0,
+            transparent 45%
+        ),
+        linear-gradient(100deg, #f2dfdb, #f7e7e3, #f1d9d5);
+}
+
+.pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pedido > span:first-child {
+    max-width: 180px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.2;
+    color: var(--rosa-fuerte);
+}
+
+.icono-corazon {
+    width: 75px;
+    height: 1px;
+    background-color: var(--rosa-fuerte);
+    margin-top: 10px;
+    transform: rotate(-7deg);
+}
+
+.icono-linea,
+.cora {
+    display: none;
+}
+
+.favorito {
+    text-align: center;
+}
+
+.favorito > span:first-child {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--rosa-fuerte);
+    margin-bottom: 5px;
+}
+
+.favorito h3 {
+    max-width: 290px;
+    margin: 0 auto;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--marron);
+}
+
+.red {
+    display: flex;
+    justify-content: center;
+}
+
+.red a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 21px;
+    background-color: #805248;
+    border-radius: 30px;
+    color: var(--blanco);
+    font-size: 11px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.red a::after {
+    content: "→";
+    font-size: 16px;
+}
+
+.red a:hover {
+    background-color: var(--marron-oscuro);
+    transform: translateY(-2px);
+}
+
+
+/* 
+   8. PIE DE PÁGINA
+*/
+
+footer {
+    min-height: 105px;
+    padding: 20px 6.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: var(--crema);
+}
+
+footer > div:first-child {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.icono-ultimo {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    color: var(--rosa-oscuro);
+    font-size: 26px;
+}
+
+footer > div:first-child > p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-style: italic;
+    line-height: 1.2;
+    color: var(--marron);
+}
+
+.final {
+    grid-column: 2;
+    font-size: 7px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: var(--marron);
+}
+
+.derechos p {
+    font-size: 9px;
+    color: #9b908b;
+    text-align: right;
+}
+
+
+/* 
+   9. ANIMACIONES SUAVES
+ */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main > section:first-child > div:first-child {
+    animation: aparecer 0.8s ease both;
+}
+
+.imagen-principal {
+    animation: aparecer 1s ease both;
+}
+
+.caracteristicas {
+    animation: aparecer 0.7s ease both;
+}
+
+.imagen-galeria {
+    animation: aparecer 0.8s ease both;
+}
+
+
+
+/* ==========================================
+   DISEÑO RESPONSIVE - SOFTY CAKES
+   Teléfonos, tablets, laptops y escritorio
+========================================== */
+
+
+/* ==========================================
+   1. TELÉFONOS PEQUEÑOS
+   Hasta 380px
+   Ejemplo: teléfonos compactos
+========================================== */
+
+@media screen and (max-width: 380px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 14px;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    header .titulo {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .nombre-empresa {
+        font-size: 1.4rem;
+    }
+
+    .subtitulo-empresa {
+        font-size: 0.75rem;
+    }
+
+    .menu-navegacion {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .menu-navegacion ul {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    main > section:first-child {
+        grid-template-columns: minmax(0, 1fr);
+        min-height: auto;
+    }
+
+    main > section:first-child > div:first-child {
+        padding: 35px 22px;
+    }
+
+    main > section:first-child h1 {
+        font-size: clamp(32px, 9vw, 38px);
+        letter-spacing: -0.7px;
+    }
+
+    main > section:first-child > div:first-child > p:nth-of-type(2) {
+        font-size: 13px;
+    }
+
+    .imagen-principal {
+        width: 100%;
+        height: 240px;
+        min-height: 0;
+        border-radius: 75px 0 0 0;
+    }
+
+    .imagen-principal img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: cover;
+    }
+
+    .caracteristicas-producto {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px 4px;
+        padding: 22px 10px;
+    }
+
+    .caracteristicas {
+        padding: 8px 5px;
+    }
+
+    .caracteristicas:not(:last-child)::after {
+        display: none;
+    }
+
+    .caracteristicas p {
+        font-size: 12px;
+    }
+
+    .nuestra-especialidad {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        padding: 35px 20px;
+    }
+
+    .especialidad h2 {
+        font-size: 31px;
+    }
+
+    .galeria {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .imagen-galeria img {
+        height: 240px;
+    }
+
+    .imagen-galeria h3 {
+        font-size: 17px;
+    }
+
+    .imagen-galeria p {
+        font-size: 12px;
+    }
+
+    .experiencia {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .imagen-experiencia {
+        height: 230px;
+        border-radius: 0 0 70px 0;
+    }
+
+    .postre {
+        padding: 28px 22px;
+    }
+
+    .postre h2 {
+        font-size: 28px;
+    }
+
+    .opciones {
+        grid-template-columns: 43px minmax(0, 1fr);
+        column-gap: 10px;
+        padding: 20px;
+    }
+
+    .icono-opciones {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+
+    .opciones h4 {
+        font-size: 12px;
+    }
+
+    .opciones p {
+        font-size: 11px;
+    }
+
+    .pedidos {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        padding: 28px 20px;
+    }
+
+    .favorito h3 {
+        font-size: 21px;
+    }
+
+    .red a {
+        padding: 12px 17px;
+        white-space: normal;
+        text-align: center;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 25px 18px;
+    }
+
+    footer > div:first-child {
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer > div:first-child > p {
+        font-size: 19px;
+    }
+
+    .derechos {
+        width: 100%;
+    }
+
+    .derechos p {
+        text-align: center;
+        font-size: 10px;
+    }
+}
+
+
+/* ==========================================
+   2. TELÉFONOS NORMALES
+   De 381px a 600px
+========================================== */
+
+@media screen and (min-width: 381px) and (max-width: 600px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 14px 18px;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .nombre-empresa {
+        font-size: 1.55rem;
+    }
+
+    .subtitulo-empresa {
+        font-size: 0.8rem;
+    }
+
+    .menu-navegacion {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .menu-navegacion ul {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .menu-navegacion a {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    main > section:first-child {
+        grid-template-columns: minmax(0, 1fr);
+        min-height: auto;
+    }
+
+    main > section:first-child > div:first-child {
+        padding: 38px 27px;
+    }
+
+    main > section:first-child h1 {
+        font-size: clamp(36px, 8vw, 44px);
+    }
+
+    .imagen-principal {
+        height: 290px;
+        min-height: 0;
+        border-radius: 90px 0 0 0;
+    }
+
+    .imagen-principal img {
+        height: 100%;
+        min-height: 0;
+    }
+
+    .caracteristicas-producto {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 5px;
+        padding: 25px 15px;
+    }
+
+    .caracteristicas:not(:last-child)::after {
+        display: none;
+    }
+
+    .nuestra-especialidad {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 40px 25px;
+    }
+
+    .especialidad h2,
+    .especialidad > p:nth-of-type(2) {
+        max-width: 100%;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 14px;
+    }
+
+    .imagen-galeria img {
+        height: 210px;
+    }
+
+    .imagen-galeria h3 {
+        font-size: 15px;
+    }
+
+    .imagen-galeria p {
+        font-size: 11px;
+    }
+
+    .experiencia {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .imagen-experiencia {
+        height: 260px;
+        border-radius: 0 0 85px 0;
+    }
+
+    .postre {
+        padding: 30px 25px;
+    }
+
+    .opciones {
+        padding: 22px 25px;
+    }
+
+    .pedidos {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        padding: 30px 20px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 25px 20px;
+    }
+
+    footer > div:first-child {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .derechos {
+        width: 100%;
+    }
+
+    .derechos p {
+        text-align: center;
+    }
+}
+
+
+/* ==========================================
+   3. TABLETS PEQUEÑAS
+   De 601px a 767px
+========================================== */
+
+@media screen and (min-width: 601px) and (max-width: 767px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 15px 4%;
+    }
+
+    .logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .nombre-empresa {
+        font-size: 1.6rem;
+    }
+
+    .subtitulo-empresa {
+        font-size: 0.8rem;
+    }
+
+    .menu-navegacion {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .menu-navegacion ul {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .menu-navegacion a {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+
+    main > section:first-child {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        min-height: 350px;
+    }
+
+    main > section:first-child > div:first-child {
+        padding: 35px 20px 35px 30px;
+    }
+
+    main > section:first-child h1 {
+        font-size: clamp(32px, 5vw, 40px);
+    }
+
+    .imagen-principal {
+        min-height: 350px;
+        border-radius: 100px 0 0 0;
+    }
+
+    .imagen-principal img {
+        min-height: 350px;
+    }
+
+    .caracteristicas-producto {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 5px;
+        padding: 25px 20px;
+    }
+
+    .caracteristicas:not(:last-child)::after {
+        display: none;
+    }
+
+    .nuestra-especialidad {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        padding: 42px 5%;
+    }
+
+    .especialidad h2,
+    .especialidad > p:nth-of-type(2) {
+        max-width: 500px;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .imagen-galeria img {
+        height: 180px;
+    }
+
+    .experiencia {
+        grid-template-columns: 40% 60%;
+    }
+
+    .imagen-experiencia {
+        height: 280px;
+    }
+
+    .postre {
+        padding: 25px 20px;
+    }
+
+    .experiencia > .opciones {
+        grid-column: 1 / -1;
+        padding: 25px 7%;
+    }
+
+    .pedidos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+        padding: 28px 5%;
+    }
+
+    .favorito {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        padding: 25px 5%;
+    }
+
+    .derechos {
+        max-width: 45%;
+    }
+}
+
+
+/* ==========================================
+   4. TABLETS NORMALES
+   De 768px a 1023px
+========================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    header {
+        gap: 14px;
+        padding: 12px 3%;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nombre-empresa {
+        font-size: 1.5rem;
+    }
+
+    .subtitulo-empresa {
+        font-size: 0.78rem;
+    }
+
+    .menu-navegacion ul {
+        gap: 2px;
+    }
+
+    .menu-navegacion a {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+    main > section:first-child {
+        grid-template-columns: 45% 55%;
+        min-height: 365px;
+    }
+
+    main > section:first-child > div:first-child {
+        padding: 35px 20px 35px 9%;
+    }
+
+    main > section:first-child h1 {
+        font-size: clamp(35px, 4.5vw, 45px);
+    }
+
+    .imagen-principal,
+    .imagen-principal img {
+        min-height: 365px;
+    }
+
+    .caracteristicas-producto {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        padding: 22px 2%;
+    }
+
+    .caracteristicas {
+        padding: 0 7px;
+    }
+
+    .caracteristicas p {
+        font-size: 11px;
+    }
+
+    .nuestra-especialidad {
+        grid-template-columns: 35% 65%;
+        padding: 42px 4%;
+        gap: 12px;
+    }
+
+    .galeria {
+        gap: 15px;
+    }
+
+    .imagen-galeria img {
+        height: 180px;
+    }
+
+    .experiencia {
+        grid-template-columns: 29% 39% 32%;
+    }
+
+    .imagen-experiencia {
+        height: 260px;
+    }
+
+    .postre {
+        padding: 24px 18px;
+    }
+
+    .experiencia > .opciones {
+        grid-template-columns: 42px minmax(0, 1fr);
+        column-gap: 8px;
+        padding: 18px 12px;
+    }
+
+    .icono-opciones {
+        width: 39px;
+        height: 39px;
+    }
+
+    .opciones h4 {
+        font-size: 10px;
+    }
+
+    .opciones p {
+        font-size: 9px;
+    }
+
+    .pedidos {
+        padding: 22px 4%;
+        gap: 12px;
+    }
+
+    .favorito h3 {
+        font-size: 18px;
+    }
+
+    .red a {
+        padding: 11px 14px;
+        font-size: 10px;
+    }
+
+    footer {
+        padding: 20px 4%;
+        gap: 12px;
+    }
+
+    footer > div:first-child > p {
+        font-size: 20px;
+    }
+}
+
+
+/* ==========================================
+   5. TABLETS GRANDES
+   De 1024px a 1199px
+========================================== */
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+
+    header {
+        padding: 12px 4%;
+        gap: 18px;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .menu-navegacion ul {
+        gap: 4px;
+    }
+
+    .menu-navegacion a {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    main > section:first-child > div:first-child {
+        padding-left: 10%;
+    }
+
+    .nuestra-especialidad {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .imagen-galeria img {
+        height: 190px;
+    }
+
+    .experiencia {
+        grid-template-columns: 30% 39% 31%;
+    }
+
+    .postre {
+        padding: 25px 20px;
+    }
+
+    .pedidos {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
+
+
+/* ==========================================
+   6. LAPTOPS
+   De 1200px a 1439px
+========================================== */
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+
+    header {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    main > section:first-child > div:first-child {
+        padding-left: 14%;
+    }
+
+    .nuestra-especialidad {
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+
+    .imagen-galeria img {
+        height: 200px;
+    }
+
+    .experiencia {
+        grid-template-columns: 30% 39% 31%;
+    }
+
+    .pedidos {
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+}
+
+
+/* ==========================================
+   7. COMPUTADORAS DE ESCRITORIO
+   De 1440px en adelante
+   Incluye pantallas de 1920 x 1080
+========================================== */
+
+@media screen and (min-width: 1440px) {
+
+    header {
+        padding-right: max(6%, calc((100% - 1550px) / 2));
+        padding-left: max(6%, calc((100% - 1550px) / 2));
+    }
+
+    main > section:first-child > div:first-child {
+        padding-left: max(12%, calc((100% - 1500px) / 2));
+    }
+
+    .caracteristicas-producto {
+        padding-right: max(5%, calc((100% - 1450px) / 2));
+        padding-left: max(5%, calc((100% - 1450px) / 2));
+    }
+
+    .nuestra-especialidad {
+        padding-right: max(6.7%, calc((100% - 1450px) / 2));
+        padding-left: max(6.7%, calc((100% - 1450px) / 2));
+    }
+
+    .imagen-galeria img {
+        height: clamp(200px, 13vw, 250px);
+    }
+
+    .postre {
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+
+    .pedidos {
+        padding-right: max(8%, calc((100% - 1400px) / 2));
+        padding-left: max(8%, calc((100% - 1400px) / 2));
+    }
+
+    footer {
+        padding-right: max(6.5%, calc((100% - 1500px) / 2));
+        padding-left: max(6.5%, calc((100% - 1500px) / 2));
+    }
+}
